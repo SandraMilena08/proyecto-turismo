@@ -1,0 +1,174 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main">
+    <section class="form tourist-form">
+        <div class="form__container container grid">
+            <div class="form__data">
+                <h2 class="section__title section__large-title form__title">Registro de <br><b>Turista</b></h2>
+                <p class="section__description form__description">Completa el siguiente formulario para crear una cuenta:</p>
+            </div>
+            <form [formGroup]="formGroup" (ngSubmit)="crearTurista()" class="form-imp grid tourist-form__imp">
+
+                <!-- Icono turista -->
+                <app-icono-turista class="form__icono-turista" [iconoSeleccionado]="0" (eventEmitter)="icono = $event"></app-icono-turista>
+
+                <label> <!-- Nombre -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Nombre</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa tu primer nombre"></i>
+                    </div>  
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Nombre .." class="label__input"
+                            formControlName="nombre"
+                            [ngClass]="{ 'label__input--success': f.nombre.touched && !f.nombre.errors, 'label__input--error': f.nombre.touched && f.nombre.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.nombre.touched && !f.nombre.errors, 'ri-close-fill label__input--error-icon': f.nombre.touched && f.nombre.errors }"></i>                        
+                    </div> 
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.required">El nombre es requerido</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.minlength">El nombre debe tener mínimo {{ f.nombre.errors?.minlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.maxlength">El nombre debe tener máximo {{ f.nombre.errors?.maxlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.pattern">Ingrese un nombre válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.nombre.touched && !f.nombre.errors">Correcto!</li>                        
+                    </ul>                                     
+                </label>
+
+                <label> <!-- Apellido -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Apellido</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa tu primer apellido (opcional)"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Apellido .." class="label__input"
+                            formControlName="apellido"
+                            [ngClass]="{ 'label__input--success': f.apellido.touched && !f.apellido.errors && qa > 0, 'label__input--error': f.apellido.touched && f.apellido.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.apellido.touched && !f.apellido.errors && qa > 0, 'ri-close-fill label__input--error-icon': f.apellido.touched && f.apellido.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo opcional</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.apellido.touched && f.apellido.errors?.minlength">El apellido debe tener mínimo {{ f.apellido.errors?.minlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.apellido.touched && f.apellido.errors?.maxlength">El apellido debe tener máximo {{ f.apellido.errors?.maxlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.apellido.touched && f.apellido.errors?.pattern">Ingrese un apellido válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.apellido.touched && !f.apellido.errors && qa > 0">Correcto!</li>                        
+                    </ul>
+                </label>  
+
+                <label> <!-- Fecha nacimiento -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Fecha de Nacimiento</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa tu fecha de nacimiento"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="date" class="label__input"
+                            style="padding-right: 1rem;"
+                            formControlName="fechaNacimiento"
+                            [ngClass]="{ 'label__input--success': f.fechaNacimiento.touched && !f.fechaNacimiento.errors, 'label__input--error': f.fechaNacimiento.touched && f.fechaNacimiento.errors }">                        
+                        <!--<i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.fechaNacimiento.touched && !f.fechaNacimiento.errors, 'ri-close-fill label__input--error-icon': f.fechaNacimiento.touched && f.fechaNacimiento.errors }"></i>-->
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.fechaNacimiento.touched && f.fechaNacimiento.errors?.required">La fecha de nacimiento es requerida</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.fechaNacimiento.touched && f.fechaNacimiento.errors?.wrongAge">Edad inválida: Debes tener +18 años</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.fechaNacimiento.touched && !f.fechaNacimiento.errors">Correcto!</li>                        
+                    </ul>  
+                </label>
+                
+                <label> <!-- Correo electrónico -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Correo Electrónico</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa tu correo electrónico"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="E-mail .." class="label__input"
+                            formControlName="email"
+                            [ngClass]="{ 'label__input--success': f.email.touched && !f.email.errors, 'label__input--error': f.email.touched && f.email.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.email.touched && !f.email.errors, 'ri-close-fill label__input--error-icon': f.email.touched && f.email.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.email.touched && f.email.errors?.required">El correo electrónico es requerido</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.email.touched && f.email.errors?.emailExiste">El correo electrónico ya está en uso</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.email.touched && f.email.errors?.email">Ingrese un correo electrónico válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.email.touched && !f.email.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Clave -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Clave</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa una clave de seguridad (Puede contener: minúsculas, mayúsculas, números y !?-)"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="password" placeholder="Clave .." class="label__input"
+                            formControlName="clave"
+                            [ngClass]="{ 'label__input--success': f.clave.touched && !f.clave.errors, 'label__input--error': f.clave.touched && f.clave.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.clave.touched && !f.clave.errors, 'ri-close-fill label__input--error-icon': f.clave.touched && f.clave.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.required">La clave es requerida</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.minlength">La clave debe tener mínimo {{ f.clave.errors?.minlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.maxlength">La clave debe tener máximo {{ f.clave.errors?.maxlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.pattern">Ingrese una clave válida</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.clave.touched && !f.clave.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Confirmar clave -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Confirmar Clave</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa nuevamente la clave de seguridad"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="password" placeholder="Confirmar clave .." class="label__input"
+                            formControlName="confirmarClave"
+                            [ngClass]="{ 'label__input--success': f.confirmarClave.touched && !f.confirmarClave.errors, 'label__input--error': f.confirmarClave.touched && f.confirmarClave.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.confirmarClave.touched && !f.confirmarClave.errors, 'ri-close-fill label__input--error-icon': f.confirmarClave.touched && f.confirmarClave.errors }"></i>                    
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.confirmarClave.touched && f.confirmarClave.errors?.required">Confirmar clave es requerido</li>                            
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.confirmarClave.touched && f.confirmarClave.errors?.wrongPass">Las claves no coinciden</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.confirmarClave.touched && !f.confirmarClave.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <div class="form-imp__submit-button">
+                    <button type="submit" class="button">Continuar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>    
+</main>

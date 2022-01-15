@@ -1,0 +1,10 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<app-ot-detail
+    *ngIf="servicio && proveedor && listaPlanes && listaServicios"
+    [modulo]="'servicio'"    
+    [servicio]="servicio"
+    [proveedor]="proveedor"
+    [listaPlanes]="listaPlanes"
+    [listaServicios]="listaServicios"></app-ot-detail>

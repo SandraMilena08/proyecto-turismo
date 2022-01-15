@@ -1,0 +1,70 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main">
+    <section class="form login-form">
+        <div class="form__container container grid">
+            <div class="form__data">
+                <h2 class="section__title section__large-title form__title">Cambiar <br><b>Clave</b></h2>
+                <p class="section__description form__description">Completa el siguiente formulario para cambiar la clave de tu cuenta:</p>
+            </div>
+            <form [formGroup]="formGroup" (ngSubmit)="cambiarClave()" class="login-form__imp form-imp grid">
+
+                <label> <!-- Clave -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Clave</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa una clave de seguridad (Puede contener: minúsculas, mayúsculas, números y !?-)"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="password" placeholder="Clave .." class="label__input"
+                            formControlName="clave"
+                            [ngClass]="{ 'label__input--success': f.clave.touched && !f.clave.errors, 'label__input--error': f.clave.touched && f.clave.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.clave.touched && !f.clave.errors, 'ri-close-fill label__input--error-icon': f.clave.touched && f.clave.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.required">La clave es requerida</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.minlength">La clave debe tener mínimo {{ f.clave.errors?.minlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.maxlength">La clave debe tener máximo {{ f.clave.errors?.maxlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.pattern">Ingrese una clave válida</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.clave.touched && !f.clave.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Confirmar clave -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Confirmar Clave</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa nuevamente la clave de seguridad"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="password" placeholder="Confirmar clave .." class="label__input"
+                            formControlName="confirmarClave"
+                            [ngClass]="{ 'label__input--success': f.confirmarClave.touched && !f.confirmarClave.errors, 'label__input--error': f.confirmarClave.touched && f.confirmarClave.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.confirmarClave.touched && !f.confirmarClave.errors, 'ri-close-fill label__input--error-icon': f.confirmarClave.touched && f.confirmarClave.errors }"></i>                    
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.confirmarClave.touched && f.confirmarClave.errors?.required">Confirmar clave es requerido</li>                            
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.confirmarClave.touched && f.confirmarClave.errors?.wrongPass">Las claves no coinciden</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.confirmarClave.touched && !f.confirmarClave.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <div class="form-imp__submit-button">
+                    <button type="submit" class="button">Continuar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</main>

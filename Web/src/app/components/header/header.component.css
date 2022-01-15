@@ -1,0 +1,182 @@
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);   
+    z-index: var(--z-header); 
+    background: var(--white-color);
+}
+
+.nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+.nav__logo, .nav__mostrar-menu, .nav__cerrar-menu {
+    color: var(--title-color);
+}
+
+/* Logo */
+.nav__logo {
+    font-weight: var(--font-bold);
+}
+
+/* Mostrar menú */
+.nav__mostrar-menu {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;    
+    cursor: pointer;        
+}
+
+/* Menú */
+.nav__menu {
+    position: relative;
+}
+
+.user-icon__icon {
+    border-radius: 4px;
+}
+
+/* Menú responsive */
+@media screen and (max-width: 767px) {
+    
+    /* Menú */
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        padding: 3rem;
+        background-color: var(--first-color-alt);
+        transition: .4s;
+    }
+
+    .user-icon__btn {
+        display: flex; 
+        flex-flow: column;    
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .user-icon__icon {
+        width: 125px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 8px;                
+    }    
+
+    .user-icon__arrow-down {
+        display: none;
+    }    
+
+}
+
+.nav__lista {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.user-icon__menu-item-enlace {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+.nav__enlace, .user-icon__menu-item-enlace > p {
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    text-transform: uppercase;
+}
+
+.user-icon__menu-item-enlace > i {
+    color: var(--title-color);
+}
+
+.nav__enlace:hover, .user-icon__menu-item-enlace:hover > * {
+    color: var(--first-color);
+}
+
+/* Cerrar menú */
+.nav__cerrar-menu {
+    position: absolute;
+    top: 2.8rem;
+    right: 3rem;
+    font-size: 1.5rem;   
+    cursor: pointer;    
+}
+
+/* Mostrar menú */
+.mostrar-menu {
+    right: 0;
+}
+
+/* Dispositivos medianos */
+@media screen and (min-width: 768px) {
+    
+    /* Header */
+    header {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__lista {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 2rem;
+    }
+
+    .nav__enlace, .user-icon__menu-item-enlace > p {
+        text-transform: initial;
+    }
+
+    .nav__cerrar-menu, .nav__mostrar-menu {
+        display: none;
+    }
+
+    .user-icon__btn {
+        display: flex;
+        flex-flow: row;
+        gap: .75rem;
+    }
+    
+    .user-icon__icon {
+        width: 2.2rem;
+        height: 2.2rem;
+        object-fit: cover;
+    }
+
+    .user-icon__action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+    }
+
+    .user-icon__menu {
+        position: absolute;  
+        display: none;     
+        width: 12.5rem;        
+        top: calc(var(--header-height) + .5rem);
+        right: 0;
+        padding: 1rem;
+        background-color: var(--first-color-alt);
+        z-index: var(--z-header);
+    }
+
+    .user-icon__arrow-down {
+        color: var(--title-color);
+        cursor: pointer;
+    }
+
+}
+
+.mostrar-menu-usuario {
+    display: grid;    
+}

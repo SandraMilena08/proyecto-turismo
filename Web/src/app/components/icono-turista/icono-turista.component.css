@@ -1,0 +1,64 @@
+/* Icono turista */
+.tourist-icon__set {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.touris-icon__container {
+    position: relative;
+    padding: var(--mb-1-5);    
+    background: var(--first-color-alt);
+    border-radius: 4px;
+    cursor: pointer;  
+    overflow: hidden;      
+    transition: .3s;
+}
+
+.touris-icon__container:hover {
+    padding: var(--mb-1);
+}
+
+.form-label__title {
+    margin-bottom: var(--mb-1);
+}
+
+.avatar-check-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    width: 2.6rem;
+    height: 2.6rem;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--h2-font-size);
+    color: var(--white-color);
+    background: var(--first-color);
+    border-radius: 4px 0;
+}
+
+.touris-icon__attrib {
+    grid-column-start: 1;
+    grid-column-end: 3;    
+}
+
+.attrib__url {
+    font-size: var(--very-small-font-size);
+    text-align: center;
+}
+
+.attrib__url > a {
+    color: var(--first-color);
+}
+
+@media screen and (min-width: 520px) {
+    
+    .tourist-icon__set {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .touris-icon__attrib {
+        grid-column-start: 1;
+        grid-column-end: 5;    
+    }
+
+}

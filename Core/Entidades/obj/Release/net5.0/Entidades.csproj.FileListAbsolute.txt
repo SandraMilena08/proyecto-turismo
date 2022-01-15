@@ -1,0 +1,12 @@
+J:\Documents\Code\Codigo\Core\Entidades\bin\Release\net5.0\Entidades.deps.json
+J:\Documents\Code\Codigo\Core\Entidades\bin\Release\net5.0\Entidades.dll
+J:\Documents\Code\Codigo\Core\Entidades\bin\Release\net5.0\ref\Entidades.dll
+J:\Documents\Code\Codigo\Core\Entidades\bin\Release\net5.0\Entidades.pdb
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.csproj.AssemblyReference.cache
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.AssemblyInfoInputs.cache
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.AssemblyInfo.cs
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.csproj.CoreCompileInputs.cache
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.dll
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\ref\Entidades.dll
+J:\Documents\Code\Codigo\Core\Entidades\obj\Release\net5.0\Entidades.pdb

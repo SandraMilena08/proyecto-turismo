@@ -1,0 +1,47 @@
+<div class="service-images" *ngIf="servicio">
+    <swiper 
+        [effect]="'coverflow'"
+        [grabCursor]="true"
+        [centeredSlides]="true"
+        [slidesPerView]="'auto'"
+        [coverflowEffect]="{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+        }"
+        [pagination]="true"
+        class="mySwiper"
+    >
+        <ng-template swiperSlide class="mySwiper__content" *ngFor="let imagen of servicio!.imagenes">
+            <img [src]="imagen">                            
+        </ng-template>                                
+    </swiper>
+</div>
+<div class="service-list__item-info">
+    <h3 class="service-list__item-info-name">{{ servicio!.nombre! | subString:25 }}</h3>
+    <p class="service-list__item-info-information">{{ servicio!.informacion! | subString:120 }}</p>
+    <div class="service-list__item-info-rating-price-town grid">                            
+        <div class="service-list__item-info-qnt-price">
+            <i class="ri-user-5-fill"></i>
+            <p>El precio es por persona</p>
+        </div> 
+        <div class="service-list__item-info-rating">
+            <i class="ri-star-fill"></i>
+            <p>{{ servicio!.puntuacion }}</p>
+        </div>                                                              
+        <div class="service-list__item-info-town">
+            <i class="ri-map-pin-fill"></i>
+            <p>{{ servicio!.municipio! | subString:10 }}</p>
+        </div>
+        <div class="service-list__item-info-town">
+            <i class="ri-node-tree"></i>
+            <p>{{ servicio!.categoria! | subString:10 }}</p>
+        </div>
+        <div class="service-list__item-info-price">
+            <i class="ri-price-tag-3-fill"></i>
+            <p>{{ servicio!.precio | currency | slice:0:-3 }}</p>
+        </div>                                                         
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- Header -->
+<app-header [rol]="'administrador'"></app-header>
+
+<main class="main">
+  <section class="report">
+    <div class="report__container container grid">
+      <div class="form__data">
+        <h2 class="section__title section__large-title form__title">Módulo de <br><b>Reportes</b></h2>
+        <p class="section__description form__description">Los reportes ayudan a comprender el comportamiento de los turistas en la región del Gualivá:</p>
+      </div>
+      <ngx-tabs>
+        <ngx-tab [active]="true" name="Municipios">        
+            <app-chart-pie></app-chart-pie>
+        </ngx-tab>
+        <ngx-tab name="Oferta turística">
+            <app-bar-chart></app-bar-chart>
+        </ngx-tab>
+        <ngx-tab name="Edades">
+            <app-radar-chart></app-radar-chart>
+        </ngx-tab>
+      </ngx-tabs>
+    </div>
+  </section>    
+</main>

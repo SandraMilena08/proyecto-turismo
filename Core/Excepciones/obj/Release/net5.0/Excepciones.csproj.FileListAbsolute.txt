@@ -1,0 +1,12 @@
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Release\net5.0\Excepciones.deps.json
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Release\net5.0\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Release\net5.0\ref\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Release\net5.0\Excepciones.pdb
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.csproj.AssemblyReference.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.AssemblyInfoInputs.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.AssemblyInfo.cs
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.csproj.CoreCompileInputs.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\ref\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Release\net5.0\Excepciones.pdb

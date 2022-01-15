@@ -1,0 +1,12 @@
+.no-report__cntr {
+    display: flex;
+    margin-top: var(--mb-2-5);
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+}
+
+.no-report__img {
+    width: 11rem;
+    margin-bottom: var(--mb-2);
+}

@@ -1,0 +1,24 @@
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.deps.json
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Debug\net5.0\ref\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.pdb
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfoInputs.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfo.cs
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.csproj.CoreCompileInputs.cache
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.deps.json
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\bin\Debug\net5.0\ref\Excepciones.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\bin\Debug\net5.0\Excepciones.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.csproj.AssemblyReference.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfoInputs.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.AssemblyInfo.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\ref\Excepciones.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Excepciones\obj\Debug\net5.0\Excepciones.pdb

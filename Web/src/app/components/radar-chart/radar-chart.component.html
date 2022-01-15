@@ -1,0 +1,71 @@
+<section class="search__sctn">
+  <div class="categories__data" style="margin-top: 2rem;">
+      <h2 class="section__title categories title">Reporte de <br> categorías por edad</h2>      
+      <p class="section__description search__description">                      
+          Se muestran las tendencias  de preferencias de categorías de ofertas turísticas con base a las poblaciones de turistas existentes.
+      </p>
+      <p class="section__description search__description">            
+        Para generar un reporte, debes seleccionar el mes y el año por los cuales deseas realizar la búsqueda.
+      </p>
+  </div>
+
+  <div class="search">
+    <div class="search__form">
+
+      <div class="search__param"> <!-- Meses -->  
+        <div class="search__ddl-btn">
+            <div class="search__ddl-btn-info">
+                <span class="search__ddl-title">Mes</span>
+                <p class="search__ddl-desc">{{ months[month-1].nombre }}</p>
+            </div>   
+            <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+        </div>
+        <ul class="search__ddl-items">
+            <li class="search__dll-item"
+                *ngFor="let mon of months; index as i"
+                [ngClass]="{ 'search__dll-item-active': mon.nombre == months[month-1].nombre }"
+                (click)="seleccionarMes(mon.id)">
+                <i [ngClass]="{ 'ri-checkbox-circle-line': mon.nombre != months[month-1].nombre, 'ri-checkbox-circle-fill': mon.nombre == months[month-1].nombre }"></i>
+                <p class="search__dll-item-desc">{{ mon.nombre }}</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search__param"> <!-- Años -->  
+        <div class="search__ddl-btn">
+            <div class="search__ddl-btn-info">
+                <span class="search__ddl-title">Año</span>
+                <p class="search__ddl-desc">{{ year }}</p>
+            </div>   
+            <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+        </div>
+        <ul class="search__ddl-items">
+            <li class="search__dll-item"
+                *ngFor="let yr of years; index as i"
+                [ngClass]="{ 'search__dll-item-active': yr == year }"
+                (click)="seleccionarYear(yr)">
+                <i [ngClass]="{ 'ri-checkbox-circle-line': yr != year, 'ri-checkbox-circle-fill': yr == year }"></i>
+                <p class="search__dll-item-desc">{{ yr }}</p>
+            </li>
+        </ul>
+    </div> 
+
+      <div class="search__submit-btn">
+        <button type="button" (click)="generarReporte()">Generar reporte</button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<app-no-report *ngIf="!radarChartData"></app-no-report>
+<section class="chart-section" *ngIf="radarChartData">   
+  <div style="display: block">
+    <canvas baseChart
+      [datasets]="radarChartData"
+      [options]="radarChartOptions"
+      [labels]="radarChartLabels"
+      [chartType]="radarChartType">
+    </canvas>
+  </div>  
+</section>

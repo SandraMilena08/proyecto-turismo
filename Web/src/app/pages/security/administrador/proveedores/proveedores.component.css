@@ -1,0 +1,126 @@
+/* Listar proveedores */
+.provider-list__ul {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.provider-list__item {
+    position: relative;
+    display: flex;     
+    padding-bottom: var(--mb-1-5); 
+    flex-flow: column;      
+    border: 1px solid var(--border-light-color);  
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.provider-list__item-top-cntr {
+    display: flex;
+    margin-bottom: var(--mb-1);
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+}
+
+.provider__item-icono {
+    display: flex;    
+    width: 100%;
+    height: 250px;    
+    margin-bottom: var(--mb-1);
+    object-fit: cover;
+}
+
+.provider__item-name, .provider__item-info-dir-title {
+    font-size: var(--h3-font-size);
+}
+
+.provider__item-email {
+    font-size: var(--very-small-font-size);
+}
+
+.provider__item-nit {    
+    font-size: (--small-font-size);
+}
+
+.provider__item-nit span {
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.provider-list__item-info-cntr {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.provider__item-info-one-col {
+    display: flex;
+    margin-bottom: var(--mb-1);
+    justify-content: center;
+}
+
+.provider__item-cntr {
+    display: flex;
+    margin: 0 .5rem;
+    width: fit-content;
+    align-items: center;        
+}
+
+.provider__item-town {
+    padding: .32rem .65rem;
+    background: var(--first-color);
+    border-radius: 8px;
+}
+
+.provider__item-town * {
+    font-size: var(--small-font-size);
+    color: var(--white-color);
+}
+
+.provider__item-town i {
+    margin-right: .3rem;
+}
+
+.provider__item-phone {        
+    font-size: var(--normal-font-size);
+}
+
+.provider__item-phone i {
+    margin-right: .3rem;
+    color: var(--title-color);
+}
+
+.provider-list__action-btns {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: var(--z-tooltip);
+}
+
+.provider-list__action-btn {
+    display: flex;
+    width: 1.8rem;
+    height: 1.8rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    
+}
+
+@media screen and (min-width: 490px) and (max-width: 967px) {
+
+    .provider-list__ul {
+        grid-template-columns: repeat(2, 1fr);        
+    }
+    
+}
+
+@media screen and (min-width: 968px) {
+
+    .provider-list__ul {
+        grid-template-columns: repeat(3, 1fr);        
+    }
+
+}

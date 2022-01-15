@@ -1,0 +1,121 @@
+<!-- Header -->
+<header>
+    <nav class="nav container">
+        <!-- Logo -->
+        <h2 class="nav__logo">Gualivá</h2>
+        <!-- Menú -->
+        <div class="nav__menu" #navMenu>
+            <!-- Anónimo -->
+            <ul class="nav__lista" *ngIf="rol === 'anonimo' && usuario === 'anonimo'">
+                <li class="nav__item" *ngFor="let item of menuAnonimo">
+                    <a class="nav__enlace" (click)="navegar(item.ruta)">{{ item.texto }}</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__enlace" (click)="navegar('/iniciar-sesion')">Iniciar sesión</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__enlace" (click)="navegar('/registro')">Registro</a>
+                </li>
+            </ul>
+            <!-- Turista -->
+            <ul class="nav__lista" *ngIf="rol === 'turista' || usuario == 'turista'">
+                <li class="nav__item" *ngFor="let item of menuTurista">
+                    <a class="nav__enlace" (click)="navegar(item.ruta)">{{ item.texto }}</a>
+                </li>
+                <li class="nav__user-icon grid">
+                    <div class="user-icon__btn" *ngIf="datosUsuario != null">
+                        <img [src]="datosUsuario.icono!" class="user-icon__icon">
+                        <div class="user-icon__action">
+                            <p class="user-icon__name">{{ datosUsuario.nombre! | subString:20 }}</p>
+                            <i class="user-icon__arrow-down"
+                                [ngClass]="{ 'ri-more-2-fill': estadoUlTurista == false, 'ri-arrow-up-s-line': estadoUlTurista == true }"
+                                (click)="mostrarMenuTurista()"></i>                                              
+                        </div>                        
+                    </div>
+                    <ul class="user-icon__menu grid" #ulTurista>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="navegar('/turista/cuenta')">
+                                <p>Cuenta</p>
+                                <i class="ri-settings-4-line"></i>
+                            </a>
+                        </li>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="cerrarSesion()">
+                                <p>Cerrar sesión</p>
+                                <i class="ri-logout-circle-line"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Proveedor -->
+            <ul class="nav__lista" *ngIf="rol === 'proveedor'">
+                <li class="nav__item" *ngFor="let item of menuProveedor">
+                    <a class="nav__enlace" (click)="navegar(item.ruta)">{{ item.texto }}</a>
+                </li>
+                <li class="nav__user-icon grid">
+                    <div class="user-icon__btn" *ngIf="datosUsuario != null">
+                        <img [src]="datosUsuario.icono!" class="user-icon__icon">
+                        <div class="user-icon__action">
+                            <p class="user-icon__name">{{ datosUsuario.nombre! | subString:20 }}</p>
+                            <i class="user-icon__arrow-down"
+                                [ngClass]="{ 'ri-more-2-fill': estadoUlProveedor == false, 'ri-arrow-up-s-line': estadoUlProveedor == true }"
+                                (click)="mostrarMenuProveedor()"></i>                            
+                        </div>                        
+                    </div>
+                    <ul class="user-icon__menu grid" #ulProveedor>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="navegar('/proveedor/cuenta')">
+                                <p>Cuenta</p>
+                                <i class="ri-settings-4-line"></i>
+                            </a>
+                        </li>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="cerrarSesion()">
+                                <p>Cerrar sesión</p>
+                                <i class="ri-logout-circle-line"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Administrador -->
+            <ul class="nav__lista" *ngIf="rol === 'administrador'">
+                <li class="nav__item" *ngFor="let item of menuAdmin">
+                    <a class="nav__enlace" (click)="navegar(item.ruta)">{{ item.texto }}</a>
+                </li>
+                <li class="nav__user-icon grid">
+                    <div class="user-icon__btn" *ngIf="datosUsuario != null">
+                        <img [src]="datosUsuario.icono!" class="user-icon__icon">
+                        <div class="user-icon__action">
+                            <p class="user-icon__name">{{ datosUsuario.nombre! | subString:20 }}</p>
+                            <i class="user-icon__arrow-down"
+                                [ngClass]="{ 'ri-more-2-fill': estadoUlAdministrador == false, 'ri-arrow-up-s-line': estadoUlAdministrador == true }"
+                                (click)="mostrarMenuAdministrador()"></i>                            
+                        </div>                        
+                    </div>
+                    <ul class="user-icon__menu grid" #ulAdministrador>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="navegar('/administrador/cuenta')">
+                                <p>Cuenta</p>
+                                <i class="ri-settings-4-line"></i>
+                            </a>
+                        </li>
+                        <li class="user-icon__menu-item">
+                            <a class="user-icon__menu-item-enlace" (click)="cerrarSesion()">
+                                <p>Cerrar sesión</p>
+                                <i class="ri-logout-circle-line"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Cerrar menú -->
+            <div class="ri-close-fill nav__cerrar-menu" (click)="cerrarMenu()"></div>
+        </div>
+        <!-- Mostrar menú -->
+        <div class="nav__mostrar-menu" (click)="mostrarMenu()">
+            <i class="ri-menu-3-fill"></i>
+        </div>
+    </nav>
+</header>

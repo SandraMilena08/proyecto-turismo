@@ -1,0 +1,13 @@
+﻿C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Oferta\OfertaTuristica.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Oferta\Plan.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Oferta\Servicio.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Recomendacion\Puntuacion.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Recomendacion\PuntuacionPlan.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Recomendacion\PuntuacionServicio.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Seguridad\RecuperarCuenta.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Seguridad\SupervisionUsuario.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Usuarios\Administrador.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Usuarios\PreRegistro.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Usuarios\Proveedor.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Usuarios\Turista.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Entidades\Usuarios\Usuario.cs

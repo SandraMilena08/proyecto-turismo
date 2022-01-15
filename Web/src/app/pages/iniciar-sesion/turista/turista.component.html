@@ -1,0 +1,72 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main">
+    <section class="form login-form">
+        <div class="form__container container grid">
+            <div class="form__data">
+                <h2 class="section__title section__large-title form__title">Login de <br><b>Turista</b></h2>
+                <p class="section__description form__description">Completa el siguiente formulario para iniciar sesión:</p>
+            </div>
+            <form [formGroup]="formGroup" (ngSubmit)="iniciarSesion()" class="login-form__imp form-imp grid">
+
+                <label> <!-- Correo electrónico -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Correo Electrónico</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa tu correo electrónico"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="E-mail .." class="label__input"
+                            formControlName="email"
+                            [ngClass]="{ 'label__input--success': f.email.touched && !f.email.errors, 'label__input--error': f.email.touched && f.email.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.email.touched && !f.email.errors, 'ri-close-fill label__input--error-icon': f.email.touched && f.email.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.email.touched && f.email.errors?.required">El correo electrónico es requerido</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.email.touched && f.email.errors?.email">Ingrese un correo electrónico válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.email.touched && !f.email.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Clave -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Clave</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa una clave de seguridad (Puede contener: minúsculas, mayúsculas, números y !?-)"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <input type="password" placeholder="Clave .." class="label__input"
+                            formControlName="clave"
+                            [ngClass]="{ 'label__input--success': f.clave.touched && !f.clave.errors, 'label__input--error': f.clave.touched && f.clave.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.clave.touched && !f.clave.errors, 'ri-close-fill label__input--error-icon': f.clave.touched && f.clave.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.required">La clave es requerida</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.minlength">La clave debe tener mínimo {{ f.clave.errors?.minlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.clave.touched && f.clave.errors?.maxlength">La clave debe tener máximo {{ f.clave.errors?.maxlength.requiredLength }} caracteres</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.clave.touched && !f.clave.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <div class="form-imp__submit-button">
+                    <button type="submit" class="button">Iniciar sesión</button>
+                </div>
+
+                <div class="form-imp__forgot-pass">
+                    <p class="forgot-pass__text">¿Olvidáste tu clave?, <a (click)="recuperarCuenta()">Recuperar cuenta.</a></p>
+                </div>
+
+            </form>
+        </div>        
+    </section>
+</main>

@@ -1,0 +1,185 @@
+<!-- Header -->
+<app-header [rol]="'proveedor'"></app-header>
+
+<main class="main">
+    <section class="form tourist-form">
+        <div class="form__container container grid">
+            <div class="form__data">
+                <h2 class="section__title section__large-title form__title">Información <br><b>Empresarial</b></h2>
+                <app-proveedor-habilitado></app-proveedor-habilitado>
+                <p class="section__description form__description">Cambia el icono de tu empresa:</p>
+            </div>            
+            <form [formGroup]="iconoFormGroup" (ngSubmit)="actualizarIcono()" class="form-imp grid uploader-form__imp">
+                <div class="form-uploader" (click)="mostrarVentana()">
+                    <div class="form-uploader__input">
+                        <input #iconUploader type="file" (change)="uploadFile($event)" style="display: none;" accept="image/png, image/jpeg">
+                        <button #iconSubmitBtn type="submit" style="display: none;"></button>
+                        <img *ngIf="proveedor != null && prevIcono != null" class="input__icon-image" [src]="prevIcono">
+                    </div>                    
+                    <div class="upload-icon">
+                        <img class="upload-icon__img" src="../../../../../assets/img/upload-icon.svg">
+                        <p class="upload-icon__text">Da clic aquí para subir una imagen</p>
+                    </div>
+                </div> 
+                <ul class="form-uploader-info">
+                    <li class="form-uploader-info__item">
+                        <h3>Condiciones</h3>
+                    </li>
+                    <li class="form-uploader-info__item">                        
+                        <p>La imagen debe estar en formato .JPG .JPEG ó .PNG</p>
+                    </li>
+                    <li class="form-uploader-info__item">
+                        <p>Debes subir una (1) imagen</p>                        
+                    </li>
+                    <li class="form-uploader-info__item">
+                        <p>La imagen no debe superar 1 MB</p>
+                    </li>                    
+                </ul>                               
+            </form>
+            <div class="form__data">                
+                <p class="section__description form__description">Con el siguiente formulario puedes actualizar tus datos:</p>
+            </div>
+            <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="actualizarProveedor()" class="form-imp grid tourist-form__imp">
+
+                <label> <!-- Nombre -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Nombre de la entidad</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el nombre de tu empresa"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Nombre .." class="label__input"
+                            formControlName="nombre"
+                            [ngClass]="{ 'label__input--success': f.nombre.touched && !f.nombre.errors, 'label__input--error': f.nombre.touched && f.nombre.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.nombre.touched && !f.nombre.errors, 'ri-close-fill label__input--error-icon': f.nombre.touched && f.nombre.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.required">El nombre de la empresa es requerido</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.minlength">El nombre debe tener mínimo {{ f.nombre.errors?.minlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.maxlength">El nombre debe tener máximo {{ f.nombre.errors?.maxlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.pattern">Ingrese un nombre válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.nombre.touched && !f.nombre.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- NIT -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">NIT</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="NIT con el que realizaste tu registro"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="NIT .." class="label__input"                            
+                            formControlName="nit"
+                            [ngClass]="{ 'label__input--success': f.nit.touched && !f.nit.errors, 'label__input--error': f.nit.touched && f.nit.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.nit.touched && !f.nit.errors, 'ri-close-fill label__input--error-icon': f.nit.touched && f.nit.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">No puedes cambiar este campo</li>
+                    </ul>
+                </label>
+
+                <label> <!-- Municipio -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Municipio</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el municipio en el que se encuentra tu empresa"></i>
+                    </div> 
+                    <div class="label__bottom-cntr">
+                        <select 
+                            class="label__select"
+                            formControlName="municipio"
+                            [ngClass]="{ 'label__input--success': f.municipio.touched && !f.municipio.errors, 'label__input--error': f.municipio.touched && f.municipio.errors }">
+                            <option [ngValue]="null" disabled>Seleccionar</option>
+                            <option *ngFor="let municipio of municipios" [ngValue]="municipio.nombre">{{ municipio.nombre }}</option>                            
+                        </select>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.municipio.touched && f.municipio.errors?.required">El municipio de la empresa es requerido</li>                       
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.municipio.touched && !f.municipio.errors">Correcto!</li>                        
+                    </ul>                    
+                </label>
+
+                <label> <!-- Dirección -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Dirección</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa la dirección de tu empresa (opcional)"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Dirección .." class="label__input"
+                            formControlName="direccion"
+                            [ngClass]="{ 'label__input--success': f.direccion.touched && !f.direccion.errors && qd > 0, 'label__input--error': f.direccion.touched && f.direccion.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.direccion.touched && !f.direccion.errors && qd > 0, 'ri-close-fill label__input--error-icon': f.direccion.touched && f.direccion.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">Campo opcional</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.direccion.touched && f.direccion.errors?.minlength">La dirección debe tener mínimo {{ f.direccion.errors?.minlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.direccion.touched && f.direccion.errors?.maxlength">La dirección debe tener máximo {{ f.direccion.errors?.maxlength.requiredLength }} caracteres</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.direccion.touched && !f.direccion.errors && qd > 0">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Teléfono -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Teléfono</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el teléfono de tu empresa (fijo o celular)"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Teléfono .." class="label__input"                            
+                            formControlName="telefono"
+                            [ngClass]="{ 'label__input--success': f.telefono.touched && !f.telefono.errors, 'label__input--error': f.telefono.touched && f.telefono.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.telefono.touched && !f.telefono.errors, 'ri-close-fill label__input--error-icon': f.telefono.touched && f.telefono.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.telefono.touched && f.telefono.errors?.required">El teléfono de la empresa es requerido</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.telefono.touched && f.telefono.errors?.minlength">El teléfono debe tener mínimo {{ f.telefono.errors?.minlength.requiredLength }} números</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.telefono.touched && f.telefono.errors?.maxlength">El teléfono debe tener máximo {{ f.telefono.errors?.maxlength.requiredLength }} números</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.telefono.touched && f.telefono.errors?.pattern">Ingrese un teléfono válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.telefono.touched && !f.telefono.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Correo electrónico -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Correo Electrónico</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="E-mail con el que realizaste tu registro"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="E-mail .." class="label__input"
+                            formControlName="email"
+                            [ngClass]="{ 'label__input--success': f.email.touched && !f.email.errors, 'label__input--error': f.email.touched && f.email.errors }">                        
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.email.touched && !f.email.errors, 'ri-close-fill label__input--error-icon': f.email.touched && f.email.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">                        
+                        <li class="label__input-msg-item">No puedes cambiar este campo</li>
+                    </ul>
+                </label>
+
+                <div class="form-imp__submit-button">
+                    <button type="submit" class="button">Actualizar información</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</main>

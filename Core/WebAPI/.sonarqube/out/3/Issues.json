@@ -1,0 +1,360 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "3.11.0.0",
+        "fileVersion": "3.11.0-4.21451.6 (0b1a27fd)",
+        "semanticVersion": "3.11.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'PostgreSQLContext' to match pascal case naming rules, consider using 'PostgreSqlContext'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/PostgreSQLContext.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 18,
+                  "endLine": 12,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3442",
+          "level": "warning",
+          "message": "Change the visibility of this constructor to 'protected'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Recomendacion/DPuntuacion.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 9,
+                  "endLine": 14,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'planId' to 'ofertaTuristicaId' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Recomendacion/DPuntuacionPlan.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 49,
+                  "endLine": 23,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'servicioId' to 'ofertaTuristicaId' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Recomendacion/DPuntuacionServicio.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 53,
+                  "endLine": 24,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 97,
+                  "endLine": 29,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 121,
+                  "endLine": 40,
+                  "endColumn": 126
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'planId' to 'ofertaTuristicaId' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Recomendacion/DPuntuacionPlan.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 42,
+                  "endLine": 33,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'servicioId' to 'ofertaTuristicaId' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Recomendacion/DPuntuacionServicio.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 42,
+                  "endLine": 35,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 91,
+                  "endLine": 52,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 97,
+                  "endLine": 97,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 111,
+                  "endLine": 108,
+                  "endColumn": 116
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 134,
+                  "startColumn": 91,
+                  "endLine": 134,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Datos/Oferta/DOfertaTuristica.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 137,
+                  "endLine": 146,
+                  "endColumn": 142
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S101": {
+          "id": "S101",
+          "shortDescription": "Types should be named in PascalCase",
+          "fullDescription": "Shared naming conventions allow teams to collaborate efficiently. This rule checks whether or not type names are using PascalCase. To reduce noise, two consecutive upper case characters are allowed unless they form the whole type name. So, MyXClass is compliant, but XC on its own is not.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-101",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1125": {
+          "id": "S1125",
+          "shortDescription": "Boolean literals should not be redundant",
+          "fullDescription": "Redundant Boolean literals should be removed from expressions to improve readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1125",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S3442": {
+          "id": "S3442",
+          "shortDescription": "\"abstract\" classes should not have \"public\" constructors",
+          "fullDescription": "Since abstract classes can’t be instantiated, there’s no point in their having public or internal constructors. If there is basic initialization logic that should run when an extending class instance is created, you can by all means put it in a constructor, but make that constructor private or protected.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3442",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S927": {
+          "id": "S927",
+          "shortDescription": "Parameter names should match base declaration and other partial definitions",
+          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

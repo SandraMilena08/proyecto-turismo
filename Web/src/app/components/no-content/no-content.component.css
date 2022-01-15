@@ -1,0 +1,11 @@
+.no-content__cntr {
+    display: flex;
+    margin-top: var(--mb-2);
+    flex-flow: column;
+    align-items: center;
+}
+
+.no-content__img {
+    width: 11rem;
+    margin-bottom: var(--mb-2);
+}

@@ -1,0 +1,24 @@
+<!-- Seleccionar rol -->
+<section class="select-rol">
+    <div class="select-rol__container container grid">
+        <div class="select-rol__data">
+            <h2 class="section__title section__large-title select-rol__title"><b>{{ titulo }}</b><br>de usuario</h2>
+            <p *ngIf="titulo == 'Registro'" class="section__description select-rol__description">Selecciona el rol con el cual te deseas <b>inscribir</b> a la plataforma.</p>
+            <p *ngIf="titulo != 'Registro'" class="section__description select-rol__description">Selecciona el rol con el cual deseas <b>iniciar sesión</b> en la plataforma.</p>
+        </div>
+        <!-- Roles -->
+        <div class="select-rol__cards grid">
+            <div *ngFor="let rol of roles" class="select-rol__rol grid">
+                <h2 class="rol__title">{{ rol.nombre }}</h2>
+                <p class="rol__description">El {{ rol.nombre | lowercase }} puede realizar las siguientes acciones:</p>
+                <ul class="rol__functions grid">
+                    <li *ngFor="let funcion of rol.funciones" class="rol__function-container">
+                        <i class="ri-checkbox-circle-fill rol-check-icon"></i>
+                        <p class="rol-function">{{ funcion }}</p>
+                    </li>
+                </ul>
+                <a class="button button--border rol__button" (click)="navegar(rol.nombre)">Seleccionar rol</a>
+            </div>
+        </div>
+    </div>
+</section>

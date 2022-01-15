@@ -1,0 +1,231 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Importaciones */
+@import url('../node_modules/swiper/swiper-bundle.css'); /* Swiper */
+@import url('./assets/css/form.css');
+@import url('./assets/css/tourist-ofert.css');
+@import url('./assets/css/search.css');
+
+/* Variables */
+:root {
+
+    --header-height: 3rem;
+
+    /* Colores */
+    --body-color: #FFF;
+    --first-color: #D16A1D;
+    --first-color-alt: #fde8df;
+    --title-color: rgb(0, 0, 0);
+    --text-color: rgb(120, 120, 120);
+    --white-color: #FFF;
+    --input-color: #F5F5F7;
+    --border-color: rgb(235, 235, 235);
+    --border-light-color: #DAE0E9;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --check-color: #C5F7DC;
+    --dark-check-color: #3AC279;
+    --warning-color: #fce5c0;
+    --dark-warning-color: #dc9b33;
+    --close-color: #FFCFCB;
+    --dark-close-color: #E9594C;
+
+    /* Fuentes y tipografía */    
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --large-font-size: 2.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --very-small-font-size: .75rem;
+    --font-medium: 500;
+    --font-semi-bold: 600;  
+    --font-bold: 700;
+
+    /* Márgenes */
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    
+    /* Z index */
+    --z-header: 100;
+    --z-tooltip: 60;
+    --z-search-menu: 80;
+
+}
+
+/* Dispositivos medianos */
+@media screen and (min-width: 968px) {
+    
+    :root {
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.75rem;
+        --h3-font-size: 1.25rem;
+        --large-font-size: 4rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --very-small-font-size: .813rem;
+    }
+
+}
+
+/* Estilos globales */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* Clases reutilizables */
+.main {
+    padding-top: var(--mb-1-5);
+}
+
+.container {
+    max-width: 968px;
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);    
+}
+
+.section {
+    padding: 4.5rem 0 2.5rem;    
+}
+
+.section__title {
+    margin-bottom: var(--mb-2);
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.section__large-title {
+    font-size: var(--large-font-size);
+    font-weight: var(--font-medium);
+}
+
+.section__description {
+    margin-bottom: var(--mb-1-5);
+    text-align: center;
+}
+
+.section__description::first-letter {
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: var(--font-semi-bold);
+    background-color: var(--first-color);
+    color: var(--white-color);
+    border: 1px solid transparent;
+    text-transform: capitalize;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--first-color);
+    background-color: var(--white-color);
+    border-color: var(--first-color);
+}
+
+.button--border {
+    color: var(--first-color);
+    background-color: var(--white-color);
+    border-color: var(--first-color);
+}
+
+.button--border:hover {
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+
+/* Responsive */
+
+/* Dispositivos grandes */
+@media screen and (min-width: 1024px) {
+    
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    
+    .container {
+        max-width: 1024px;
+    }
+
+}
+
+.email-msg__container {
+    max-width: 480px;
+}
+
+.email-msg__title {
+    margin-top: var(--mb-1-5);
+}
+
+.email-msg__button {
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+    
+    .email-msg__container {
+        padding: var(--mb-1-5);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: var(--mb-2);
+    }
+
+}

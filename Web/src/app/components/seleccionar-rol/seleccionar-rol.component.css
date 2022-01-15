@@ -1,0 +1,44 @@
+/* Seleccionar rol */
+.select-rol__title, .select-rol__description {
+    text-align: left;
+}
+
+/* Roles */
+.select-rol__cards {    
+    grid-template-columns: 1fr;    
+}
+
+.select-rol__rol {
+    padding: var(--mb-1-5);        
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.rol__function-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rol-check-icon {
+    margin-right: 8px;
+    color: var(--first-color);
+}
+
+.rol-function {
+    font-weight: var(--font-medium);
+}
+
+.rol__button {
+    text-align: center;
+}
+
+/* Medium devices */
+@media screen and (min-width: 768px) {
+
+    /* Roles */
+    .select-rol__cards {    
+        grid-template-columns: 1fr 1fr;    
+    }
+
+}

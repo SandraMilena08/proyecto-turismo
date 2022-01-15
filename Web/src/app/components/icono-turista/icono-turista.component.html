@@ -1,0 +1,13 @@
+<!-- Icono turista -->
+<div class="tourist-icon">
+    <h3 class="form-label__title">Icono</h3>
+    <ul class="tourist-icon__set grid">
+        <li *ngFor="let icono of iconos; index as i" class="touris-icon__container" (click)="setIconoSeleccionado(i)">
+            <img src="../../../assets/avatar/{{ icono.substring(7, 19) }}">
+            <i *ngIf="iconoSeleccionado == i" class="ri-check-fill avatar-check-icon"></i>
+        </li>
+        <li class="touris-icon__attrib grid">
+            <div class="attrib__url">Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,329 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "3.11.0.0",
+        "fileVersion": "3.11.0-4.21451.6 (0b1a27fd)",
+        "semanticVersion": "3.11.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/UnauthorizedException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/UnauthorizedException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/UnauthorizedException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'UnauthorizedException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'UnauthorizedException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/IntegridadException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/IntegridadException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/IntegridadException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'IntegridadException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'IntegridadException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NoContentException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NoContentException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NoContentException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'NoContentException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'NoContentException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NotFoundException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NotFoundException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/NotFoundException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'NotFoundException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'NotFoundException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/BadRequestException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/BadRequestException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/BadRequestException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'BadRequestException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'BadRequestException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/InternalServerErrorException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/InternalServerErrorException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Sandra%20Moreno/OneDrive%20-%20Universidad%20de%20Cundinamarca/Documentos/Codigo/Core/Excepciones/InternalServerErrorException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'InternalServerErrorException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'InternalServerErrorException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        }
+      ],
+      "rules": {
+        "S3925": {
+          "id": "S3925",
+          "shortDescription": "\"ISerializable\" should be implemented correctly",
+          "fullDescription": "The ISerializable interface is the mechanism to control the type serialization process. If not implemented correctly this could result in an invalid serialization and hard to detect bugs.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3925",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

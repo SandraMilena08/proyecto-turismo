@@ -1,0 +1,179 @@
+<!-- Header -->
+<app-header [rol]="'proveedor'"></app-header>
+
+<main class="main">
+    <section class="form service-form">
+        <div class="form__container container grid">
+            <div class="form__data">
+                <h2 class="section__title section__large-title form__title">Actualizar <br><b>Servicio Turístico</b></h2>
+                <app-proveedor-habilitado></app-proveedor-habilitado>
+                <app-banner
+                    *ngIf="servicio != null && servicio.habilitado == false"
+                    [tipo]="'error-warning'"
+                    [descripcion]="'Este servicio ha sido deshabilitado. Ya no puede ser visto por los turistas.'"></app-banner>                
+            </div>
+            <app-crud-ot-images
+                *ngIf="servicio != null"
+                [modulo]="'servicio'"
+                [idOT]="servicio.id!"
+                [listaImagenes]="servicio.imagenes!"
+                (recargarModulo)="reloadPage()"></app-crud-ot-images>                     
+            <div class="form__data">                
+                <p class="section__description form__description">Completa el formulario para editar el servicio turístico:</p>
+            </div>
+            <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="editarServicio()" class="form-imp grid service-form__imp">
+
+                <label> <!-- Nombre -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Nombre</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el nombre del servicio turístico"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Nombre .." class="label__input"
+                            formControlName="nombre"
+                            [ngClass]="{ 'label__input--success': f.nombre.touched && !f.nombre.errors, 'label__input--error': f.nombre.touched && f.nombre.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.nombre.touched && !f.nombre.errors, 'ri-close-fill label__input--error-icon': f.nombre.touched && f.nombre.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.required">El nombre del servicio es requerido</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.minlength">El nombre debe tener mínimo {{ f.nombre.errors?.minlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.maxlength">El nombre debe tener máximo {{ f.nombre.errors?.maxlength.requiredLength }} letras</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.nombre.touched && f.nombre.errors?.pattern">Ingrese un nombre válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.nombre.touched && !f.nombre.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Precio -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Precio</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el precio por persona del servicio turístico en pesos colombianos (COP)"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <input type="text" placeholder="Precio .." class="label__input"
+                            formControlName="precio"
+                            [ngClass]="{ 'label__input--success': f.precio.touched && !f.precio.errors, 'label__input--error': f.precio.touched && f.precio.errors }">
+                        <i class="label__input--icon"
+                            [ngClass]="{ 'ri-check-fill label__input--success-icon': f.precio.touched && !f.precio.errors, 'ri-close-fill label__input--error-icon': f.precio.touched && f.precio.errors }"></i>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.precio.touched && f.precio.errors?.required">El precio del servicio es requerido</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.precio.touched && f.precio.errors?.min">El precio debe ser mínimo de ${{ f.precio.errors?.min.min }} COP</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.precio.touched && f.precio.errors?.max">El precio debe ser máximo de ${{ f.precio.errors?.max.max }} COP</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.precio.touched && f.precio.errors?.pattern">Ingrese un precio válido</li>
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.precio.touched && !f.precio.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Municipio -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Municipio</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el municipio en el que se realiza el servicio turístico"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <select 
+                            class="label__select"
+                            formControlName="municipio"
+                            [ngClass]="{ 'label__input--success': f.municipio.touched && !f.municipio.errors, 'label__input--error': f.municipio.touched && f.municipio.errors }">
+                            <option [ngValue]="null" disabled>Seleccionar</option>
+                            <option *ngFor="let municipio of municipios" [ngValue]="municipio.nombre">{{ municipio.nombre }}</option>
+                        </select>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.municipio.touched && f.municipio.errors?.required">El municipio del servicio turístico es requerido</li>                       
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.municipio.touched && !f.municipio.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Categoría -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Categoría</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa la categoría a la cual pertenece el servicio turístico"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <select 
+                            class="label__select"
+                            formControlName="categoria"
+                            [ngClass]="{ 'label__input--success': f.categoria.touched && !f.categoria.errors, 'label__input--error': f.categoria.touched && f.categoria.errors }">
+                            <option [ngValue]="null" disabled>Seleccionar</option>
+                            <option *ngFor="let categoria of categorias" [ngValue]="categoria.nombre">{{ categoria.nombre }}</option>
+                        </select>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.categoria.touched && f.categoria.errors?.required">La categoria del servicio turístico es requerida</li>                       
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.categoria.touched && !f.categoria.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Volumen ingreso -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Volúmen de ingreso</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa el volúmen de ingreso perteneciente al servicio turístico"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <select 
+                            class="label__select"
+                            formControlName="volumenIngreso"
+                            [ngClass]="{ 'label__input--success': f.volumenIngreso.touched && !f.volumenIngreso.errors, 'label__input--error': f.volumenIngreso.touched && f.volumenIngreso.errors }">
+                            <option [ngValue]="null" disabled>Seleccionar</option>
+                            <option *ngFor="let volumenIngreso of volumenesIngreso" [ngValue]="volumenIngreso.nombre">{{ volumenIngreso.nombre }}</option>
+                        </select>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.volumenIngreso.touched && f.volumenIngreso.errors?.required">El volúmen de ingreso del servicio turístico es requerido</li>                       
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.volumenIngreso.touched && !f.volumenIngreso.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <label> <!-- Información -->
+                    <div class="label__top-cntr">
+                        <h3 class="label__title">Información adicional</h3>
+                        <i class="ri-information-fill label__info-icon" tooltip="Ingresa información adicional del servicio turístico"></i>
+                    </div>
+                    <div class="label__bottom-cntr">
+                        <textarea type="text" placeholder="Información .." class="label__input label__text-area"
+                            formControlName="informacion"
+                            [ngClass]="{ 'label__input--success': f.informacion.touched && !f.informacion.errors, 'label__input--error': f.informacion.touched && f.informacion.errors }"></textarea>
+                    </div>
+                    <ul class="label__input-msg-cntr">
+                        <li class="label__input-msg-item">Campo obligatorio</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.informacion.touched && f.informacion.errors?.required">La información del servicio es requerida</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.informacion.touched && f.informacion.errors?.minlength">La información debe tener mínimo {{ f.informacion.errors?.minlength.requiredLength }} caracteres</li>
+                        <li class="label__input-msg-item label__input-msg-item--error"
+                            *ngIf="f.informacion.touched && f.informacion.errors?.maxlength">La información debe tener máximo {{ f.informacion.errors?.maxlength.requiredLength }} caracteres</li>                        
+                        <li class="label__input-msg-item label__input-msg-item--success"
+                            *ngIf="f.informacion.touched && !f.informacion.errors">Correcto!</li>                        
+                    </ul>
+                </label>
+
+                <div class="form-imp__submit-button">
+                    <button type="submit" class="button">Actualizar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</main>

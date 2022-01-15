@@ -1,0 +1,9 @@
+<div class="banner-cntr {{ tipo }}__banner-cntr">
+    <i class="ri-{{tipo}}-line banner__icon {{ tipo }}__banner-icon"></i>
+    <div class="banner__info">
+        <h3 class="banner__info-title" *ngIf="tipo == 'check'">Correcto</h3>
+        <h3 class="banner__info-title" *ngIf="tipo == 'error-warning'">Advertencia</h3>
+        <h3 class="banner__info-title" *ngIf="tipo == 'close'">Error</h3>
+        <p class="banner__info-text">{{ descripcion }}</p>
+    </div>
+</div>

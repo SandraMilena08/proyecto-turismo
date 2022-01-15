@@ -1,0 +1,217 @@
+/* Search */
+.search__sctn {
+    margin-bottom: var(--mb-2);
+}
+
+.search__form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.search__param {   
+    position: relative; 
+    display: flex;
+    height: 4rem;
+    padding: 0 1rem;      
+    justify-content: space-between;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search__param-disabled {    
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    background: red;
+    border: none;
+    cursor: default;
+}
+
+/* Search de input */
+.search__param-input, .search__input-cntr * {
+    cursor: text;
+}
+
+.search__input-cntr {
+    position: relative;        
+    width: calc(100% - 1.2rem);        
+}
+
+.search__label {
+    position: absolute;
+    top: .35rem;
+    left: 0;
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);    
+}
+
+.search__input {
+    position: absolute;
+    bottom: .4rem;
+    left: 0;
+    width: 100%;    
+    height: 1.72rem;
+    padding-right: 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    background: transparent;
+}
+
+.search__clear-input-btn {
+    display: flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: calc(2rem - .6rem);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search__clear-input-btn > i {
+    font-size: 1.2rem;
+}
+
+.search__clear-input-btn:hover > i {
+    color: var(--first-color);
+}
+
+/* Search de drop down list */
+.search__ddl-btn {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;        
+}
+
+.search__ddl-title {
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.search__ddl-btn-icon {
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+}
+
+.search__ddl-items {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    display: grid;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .8rem;
+    background: rgb(250, 250, 250);
+    border-radius: 0 0 8px 8px;
+    z-index: var(--z-search-menu);    
+    overflow: hidden;    
+}
+
+.search__dll-item {
+    display: flex;
+    align-items: center;
+    padding: .65rem .5rem;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: 1px solid var(--border-light-color);
+}
+
+.search__dll-item > * {
+    color: var(--title-color);
+}
+
+.search__dll-item > i {
+    margin-right: .32rem;    
+}
+
+.search__dll-item-desc {
+    font-size: var(--very-small-font-size);    
+}
+
+.search__dll-item-active {
+    background: var(--first-color);
+    border-color: var(--first-color);
+}
+
+.search__dll-item-active > i {
+    color: var(--first-color-alt);
+}
+
+.search__dll-item-active > .search__dll-item-desc {
+    color: var(--white-color);
+}
+
+.search__param:hover > .search__ddl-items {
+    height: auto;
+    padding: 1rem;
+}
+
+.search__qualification .search__dll-item {
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.search__ddl-item-input-label {
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);      
+}
+
+.search__ddl-item-input {
+    display: flex;
+    width: 100%;    
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);    
+}
+
+/* Submit Button */
+.search__submit-btn {
+    justify-self: right;
+    width: 50%;    
+}
+
+.search__submit-btn button {
+    width: 100%;
+    height: 4rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--white-color);
+    background: var(--first-color);
+    border-radius: 4px;
+    border: none;
+    outline: none;   
+    cursor: pointer; 
+}
+
+@media screen and (min-width: 720px) {
+    
+    .search__form {        
+        grid-template-columns: repeat(2, 1fr);        
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .search__form {        
+        grid-template-columns: repeat(3, 1fr);        
+    }
+
+    .search__submit-btn {        
+        width: 100%;    
+    }
+
+}

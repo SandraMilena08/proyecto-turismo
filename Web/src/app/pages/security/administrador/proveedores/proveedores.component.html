@@ -1,0 +1,143 @@
+<!-- Header -->
+<app-header [rol]="'administrador'"></app-header>
+
+<main class="main">
+    <section class="services">
+        <div class="services__container container grid">
+            <div class="services__data">
+                <h2 class="section__title section__large-title services__title">Proveedores <br><b>Registrados</b></h2>
+                <p class="section__description form__description" style="margin-bottom: 0;">Proveedores registrados en la plataforma:</p>
+            </div>
+        </div>
+    </section>
+    <section class="search__sctn" *ngIf="parametros != null">
+        <div class="search container">
+            <form 
+                class="search__form"
+                *ngIf="formGroup != null"
+                [formGroup]="formGroup"
+                (ngSubmit)="buscarProveedores()">
+
+                <div class="search__param search__param-input"> <!-- Nombre de la empresa del proveedor -->
+                    <div class="search__input-cntr">
+                        <label class="search__label" for="nombre-ot">Nombre de empresa</label>
+                        <input id="nombre-ot" class="search__input" type="text" placeholder="Escribe el nombre de empresa de un proveedor" formControlName="nombre">
+                    </div>                    
+                    <button type="button" class="search__clear-input-btn"
+                        *ngIf="qn > 0"
+                        (click)="clearControl('nombre')">
+                        <i class="ri-close-circle-fill"></i>
+                    </button>
+                </div>
+
+                <div class="search__param search__param-input"> <!-- NIT del proveedor -->
+                    <div class="search__input-cntr">
+                        <label class="search__label" for="nombre-ot">NIT del proveedor</label>
+                        <input id="nombre-ot" class="search__input" type="text" placeholder="Escribe el NIT de un proveedor" formControlName="nit">
+                    </div>                    
+                    <button type="button" class="search__clear-input-btn"
+                        *ngIf="qnit > 0"
+                        (click)="clearControl('nit')">
+                        <i class="ri-close-circle-fill"></i>
+                    </button>
+                </div>
+
+                <div class="search__param"> <!-- Municipios -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Municipios</span>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.municipios!.length == 1 && parametros!.municipios![0] == ''">Todos</p>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.municipios![0] != ''">{{ parametros!.municipios!.length }} seleccionado(s)</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items">
+                        <li class="search__dll-item"
+                            *ngFor="let municipio of listaMunicipios"
+                            [ngClass]="{ 'search__dll-item-active': municipio.estado == true }"
+                            (click)="seleccionarMunicipio(municipio.nombre)">
+                            <i [ngClass]="{ 'ri-checkbox-circle-line': municipio.estado == false, 'ri-checkbox-circle-fill': municipio.estado == true }"></i>
+                            <p class="search__dll-item-desc">{{ municipio.nombre }}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param"> <!-- Habilitado -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Habilitados</span>
+                            <p class="search__ddl-desc">{{ parametros!.estado! == true ? 'Si' : 'No' }}</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items">
+                        <li class="search__dll-item"
+                            [ngClass]="{ 'search__dll-item-active': parametros!.estado! == true }"
+                            (click)="seleccionarEstadoHabilitado(true)">
+                            <i class="ri-checkbox-circle-line" *ngIf="parametros!.estado! == false"></i>
+                            <i class="ri-checkbox-circle-fill" *ngIf="parametros!.estado! == true"></i>
+                            <p class="search__dll-item-desc">Si</p>
+                        </li>
+                        <li class="search__dll-item"
+                            [ngClass]="{ 'search__dll-item-active': parametros!.estado! == false }"
+                            (click)="seleccionarEstadoHabilitado(false)">
+                            <i class="ri-checkbox-circle-line" *ngIf="parametros!.estado! == true"></i>
+                            <i class="ri-checkbox-circle-fill" *ngIf="parametros!.estado! == false"></i>
+                            <p class="search__dll-item-desc">No</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param search__param-disabled"></div>
+
+                <div class="search__submit-btn">
+                    <button type="submit">Buscar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="service-list" *ngIf="paginado! == null || paginado!.contenido!.length == 0">
+        <div class="service-list__container container grid">
+            <app-no-content [titulo]="'proveedores'"></app-no-content>
+        </div>
+    </section> 
+
+    <section class="provider-list grid" *ngIf="paginado != null && paginado!.contenido!.length > 0">
+        <div class="provider-list__container container grid">
+            <ul class="provider-list__ul grid">
+                <li class="provider-list__item" *ngFor="let proveedor of paginado!.contenido!">
+                    <div class="provider-list__item-top-cntr">
+                        <img [src]="proveedor.icono!" class="provider__item-icono">
+                        <h3 class="provider__item provider__item-name">{{ proveedor.nombre! | subString:24 }}</h3>
+                        <p class="provider__item provider__item-email">{{ proveedor.correoElectronico! | subString:24 }}</p>
+                        <p class="provider__item provider__item-nit"><span>NIT:</span> {{ proveedor.nit! }}</p>
+                    </div>
+                    <div class="provider-list__item-info-cntr">
+                        <div class="provider__item-info-one-col">
+                            <div class="provider__item-cntr provider__item-town">
+                                <i class="ri-map-pin-user-fill"></i>
+                                <p class="provider__item">{{ proveedor.municipio! }}</p>
+                            </div>
+                            <div class="provider__item-cntr provider__item-phone">
+                                <i class=" ri-phone-fill"></i>
+                                <p class="provider__item">{{ proveedor.telefono! }}</p>
+                            </div>
+                        </div>
+                        <h3 class="provider__item-info-dir-title">Dirección</h3>
+                        <p class="provider__item provider__item-dir">{{ proveedor.direccion! ? (proveedor.direccion! | subString:36) : 'No aplica' }}</p>
+                    </div>
+                    <div class="provider-list__action-btns grid">
+                        <button type="button" (click)="eliminarAlert(proveedor.hash!, proveedor.habilitado!, proveedor.nombre!)" class="provider-list__action-btn" tooltip="{{ proveedor.habilitado! == true ? 'Deshabilitar' : 'Habilitar' }} proveedor">
+                            <i [ngClass]="{ 'ri-alarm-warning-fill': proveedor.habilitado == true, 'ri-thumb-up-fill': proveedor.habilitado == false }"></i>
+                        </button> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>

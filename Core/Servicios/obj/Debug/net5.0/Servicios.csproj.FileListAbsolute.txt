@@ -1,0 +1,42 @@
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.deps.json
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\ref\Servicios.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.pdb
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Datos.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Entidades.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Excepciones.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Datos.pdb
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Entidades.pdb
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Excepciones.pdb
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.AssemblyReference.cache
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.GeneratedMSBuildEditorConfig.editorconfig
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.AssemblyInfoInputs.cache
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.AssemblyInfo.cs
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.CoreCompileInputs.cache
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.CopyComplete
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.dll
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\ref\Servicios.dll
+J:\Documents\Code\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.pdb
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Utilitarios.dll
+J:\Documents\Code\Codigo\Core\Servicios\bin\Debug\net5.0\Utilitarios.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.deps.json
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\ref\Servicios.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Servicios.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Datos.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Entidades.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Excepciones.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Utilitarios.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Datos.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Excepciones.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\bin\Debug\net5.0\Utilitarios.pdb
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.AssemblyReference.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.AssemblyInfoInputs.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.AssemblyInfo.cs
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.csproj.CopyComplete
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\ref\Servicios.dll
+C:\Users\Sandra Moreno\OneDrive - Universidad de Cundinamarca\Documentos\Codigo\Core\Servicios\obj\Debug\net5.0\Servicios.pdb

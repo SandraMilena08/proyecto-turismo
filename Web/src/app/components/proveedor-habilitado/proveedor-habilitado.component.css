@@ -1,0 +1,17 @@
+.proveedor-habilitado {
+    display: flex;
+    width: 100%;
+    padding: .9rem 0;    
+    padding-right: 1.1rem;
+    align-items: center;
+    background-color: var(--warning-color);
+    margin-bottom: var(--mb-2);
+    border-radius: 8px;
+    border-left: 1rem solid var(--dark-warning-color);
+}
+
+.proveedor-habilitado__warn-icon {
+    font-size: var(--h2-font-size);
+    color: var(--dark-warning-color);
+    margin: 0 1.2rem;
+}

@@ -1,0 +1,37 @@
+<div class="pagination-btns__container">
+    <div class="pagination-btns__items">
+        <button type="button" class="pagination-btn__button"            
+            [ngClass]="{ 'pagination-btn__button-disabled': paginaActual == 1 }"
+            (click)="paginar(paginaActual - 2)">
+            <i class="pagination__button-desc ri-arrow-left-s-line"></i>
+        </button>
+        <button type="button" class="pagination-btn__button"
+            *ngIf="totalPaginas > 1"             
+            [ngClass]="{ 'pagination-btn__button-active': paginaActual == 1 }"
+            (click)="paginar(0)">
+            <span class="pagination__button-desc">1</span>
+        </button>
+        <div class="pagination-btn__spacer" *ngIf="estado! == 'first' || estado! == 'both'">
+            <span class="pagination-bnt__spacer-dots">...</span>
+        </div>
+        <button type="button" class="pagination-btn__button" 
+            *ngFor="let boton of listaBotones"
+            [ngClass]="{ 'pagination-btn__button-active': boton == paginaActual }"
+            (click)="paginar(boton-1)">
+            <span class="pagination__button-desc">{{ boton }}</span>
+        </button>
+        <div class="pagination-btn__spacer" *ngIf="estado! == 'last' || estado! == 'both'">
+            <span class="pagination-bnt__spacer-dots">...</span>
+        </div>
+        <button type="button" class="pagination-btn__button"             
+            [ngClass]="{ 'pagination-btn__button-active': totalPaginas == paginaActual }"
+            (click)="paginar(totalPaginas-1)">
+            <span class="pagination__button-desc">{{ totalPaginas }}</span>
+        </button>
+        <button type="button" class="pagination-btn__button"
+            [ngClass]="{ 'pagination-btn__button-disabled': paginaActual == totalPaginas }"
+            (click)="paginar(paginaActual)">
+            <i class="pagination__button-desc ri-arrow-right-s-line"></i>
+        </button>
+    </div>
+</div>

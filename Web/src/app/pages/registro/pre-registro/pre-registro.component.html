@@ -1,0 +1,15 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main">
+    <section class="email-msg">
+        <div class="email-msg__container container grid">
+            <div class="email-data">
+                <img src="../../../../assets/img/email-verification.svg">
+                <h2 class="section__title email-msg__title">Verifica tu <br> cuenta</h2>
+                <p class="section__description email-msg__description">Se ha enviado un código de confirmación al correo electrónico suministrado anteriormente.<br><br> En caso de no recibir ningún correo, haga clic en el botón para reenviar el código de verificación.</p>
+                <a class="button email-msg__button" (click)="reenviarCodigo()">Reenviar código</a>
+            </div>
+        </div>
+    </section>
+</main>

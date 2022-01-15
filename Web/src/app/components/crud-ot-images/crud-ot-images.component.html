@@ -1,0 +1,26 @@
+<div class="crud-images__cntr">
+    <ul class="grid crud-images__list" *ngIf="listaImagenes">
+        <li class="crud-images__list-item">
+            <button type="button" class="crud-images__list-item-add-img" 
+                (click)="openImageWindow()"
+                tooltip="Subir imagen - imágenes">
+                <i class="ri-image-add-line"></i>
+            </button>
+            <form   class="crud-images__form"
+                    *ngIf="imagesFormGroup"
+                    [formGroup]="imagesFormGroup" (ngSubmit)="subirImagenes()">
+                <input #OTImagesInput type="file" (change)="onUploadImages($event)" accept="image/png, image/jpeg" multiple>
+                <button #OTImagesBtn type="submit" style="display: none;"></button>
+            </form>
+        </li>
+        <li class="crud-images__list-item" *ngFor="let imagen of listaImagenes">
+            <img class="crud-images__list-item-img" [src]="imagen">
+            <button type="button" class="crud-images__list-item-img-del"
+                *ngIf="!imagen.includes('no-photo.svg')"
+                tooltip="Eliminar imagen"
+                (click)="eliminarImagen(imagen)">
+                <i class="ri-delete-bin-fill"></i>
+            </button>
+        </li>
+    </ul>    
+</div>

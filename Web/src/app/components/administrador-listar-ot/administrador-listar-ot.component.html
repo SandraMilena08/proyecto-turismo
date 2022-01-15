@@ -1,0 +1,176 @@
+<main class="main">
+    <section class="services">
+        <div class="services__container container grid">
+            <div class="services__data">
+                <h2 class="section__title section__large-title services__title">{{ modulo }} <br><b>Registrados</b></h2>
+                <p class="section__description form__description" style="margin-bottom: 0;">{{ modulo }} registrados por los proveedores:</p>
+            </div>
+        </div>
+    </section>
+    <section class="search__sctn" *ngIf="parametros != null">
+        <div class="search container">
+            <form 
+                class="search__form"
+                *ngIf="formGroup != null"
+                [formGroup]="formGroup"
+                (ngSubmit)="buscarOT()">
+                
+                <div class="search__param search__param-input"> <!-- Nombre del plan o servicio turístico -->
+                    <div class="search__input-cntr">
+                        <label class="search__label" for="nombre-ot">Nombre del {{ moduloSingular! }}</label>
+                        <input id="nombre-ot" class="search__input" type="text" placeholder="Escribe el nombre de un {{ moduloSingular }} turístico" formControlName="nombre">
+                    </div>                    
+                    <button type="button" class="search__clear-input-btn"
+                        *ngIf="qn > 0"
+                        (click)="clearNombre()">
+                        <i class="ri-close-circle-fill"></i>
+                    </button>
+                </div>
+                
+                <div class="search__param"> <!-- Municipios -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Municipios</span>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.municipios!.length == 1 && parametros!.municipios![0] == ''">Todos</p>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.municipios![0] != ''">{{ parametros!.municipios!.length }} seleccionado(s)</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items">
+                        <li class="search__dll-item"
+                            *ngFor="let municipio of listaMunicipios"
+                            [ngClass]="{ 'search__dll-item-active': municipio.estado == true }"
+                            (click)="seleccionarMunicipio(municipio.nombre)">
+                            <i [ngClass]="{ 'ri-checkbox-circle-line': municipio.estado == false, 'ri-checkbox-circle-fill': municipio.estado == true }"></i>
+                            <p class="search__dll-item-desc">{{ municipio.nombre }}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param"> <!-- Categorías -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Categorías</span>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.categorias!.length == 1 && parametros!.categorias![0] == ''">Todas</p>
+                            <p class="search__ddl-desc"
+                                *ngIf="parametros!.categorias![0] != ''">{{ parametros!.categorias!.length }} seleccionada(s)</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items">
+                        <li class="search__dll-item"
+                            *ngFor="let categoria of listaCategorias"
+                            [ngClass]="{ 'search__dll-item-active': categoria.estado == true }"
+                            (click)="seleccionarCategoria(categoria.nombre)">
+                            <i [ngClass]="{ 'ri-checkbox-circle-line': categoria.estado == false, 'ri-checkbox-circle-fill': categoria.estado == true }"></i>
+                            <p class="search__dll-item-desc">{{ categoria.nombre }}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param"> <!-- Habilitado -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Habilitados</span>
+                            <p class="search__ddl-desc">{{ parametros!.estado! == true ? 'Si' : 'No' }}</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items">
+                        <li class="search__dll-item"
+                            [ngClass]="{ 'search__dll-item-active': parametros!.estado! == true }"
+                            (click)="seleccionarEstadoHabilitado(true)">
+                            <i class="ri-checkbox-circle-line" *ngIf="parametros!.estado! == false"></i>
+                            <i class="ri-checkbox-circle-fill" *ngIf="parametros!.estado! == true"></i>
+                            <p class="search__dll-item-desc">Si</p>
+                        </li>
+                        <li class="search__dll-item"
+                            [ngClass]="{ 'search__dll-item-active': parametros!.estado! == false }"
+                            (click)="seleccionarEstadoHabilitado(false)">
+                            <i class="ri-checkbox-circle-line" *ngIf="parametros!.estado! == true"></i>
+                            <i class="ri-checkbox-circle-fill" *ngIf="parametros!.estado! == false"></i>
+                            <p class="search__dll-item-desc">No</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param"> <!-- Puntuación -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Puntuación</span>
+                            <p class="search__ddl-desc">{{ parametros!.puntuaciones![0] }} - {{ parametros!.puntuaciones![1] }}</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items search__qualification">
+                        <li class="search__dll-item">
+                            <label class="search__ddl-item-input-label" for="puntuacionDesde">Desde</label>
+                            <input id="puntuacionDesde" type="text" class="search__ddl-item-input" (input)="puntuacionDesdeEvent()" formControlName="puntuacionDesde">
+                        </li>
+                        <li class="search__dll-item">
+                            <label class="search__ddl-item-input-label" for="puntuacionHasta">Hasta</label>
+                            <input id="puntuacionHasta" type="text" class="search__ddl-item-input" (input)="puntuacionHastaEvent()" formControlName="puntuacionHasta">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param"> <!-- Precio -->  
+                    <div class="search__ddl-btn">
+                        <div class="search__ddl-btn-info">
+                            <span class="search__ddl-title">Precio</span>
+                            <p class="search__ddl-desc">{{ parametros.precios![0] | currency | slice:0:-3 }} - {{ parametros.precios![1] | currency | slice:0:-3 }}</p>
+                        </div>   
+                        <i class="ri-arrow-down-s-line search__ddl-btn-icon"></i>
+                    </div>
+                    <ul class="search__ddl-items search__qualification">
+                        <li class="search__dll-item">
+                            <label class="search__ddl-item-input-label" for="precioDesde">Desde $</label>
+                            <input id="precioDesde" type="text" class="search__ddl-item-input" (input)="precioDesdeEvent()" formControlName="precioDesde">
+                        </li>
+                        <li class="search__dll-item">
+                            <label class="search__ddl-item-input-label" for="precioHasta">Hasta $</label>
+                            <input id="precioHasta" type="text" class="search__ddl-item-input" (input)="precioHastaEvent()" formControlName="precioHasta">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search__param search__param-disabled"></div>
+                <div class="search__param search__param-disabled"></div>                
+
+                <div class="search__submit-btn">
+                    <button type="submit">Buscar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <section class="service-list" *ngIf="paginado! == null || paginado!.contenido!.length == 0">
+        <div class="service-list__container container grid">
+            <app-no-content [titulo]="modulo!.concat(' turísticos')"></app-no-content>
+        </div>
+    </section> 
+    <section class="service-list grid" *ngIf="paginado! != null && paginado!.contenido!.length > 0">
+        <div class="service-list__container container grid">
+            <ul class="service-list__ul grid">
+                <li class="service-list__item" *ngFor="let servicio of paginado!.contenido!">                                     
+                    <app-oferta-turistica [servicio]="servicio"></app-oferta-turistica>
+                    <div class="service-list__action-btns-custom grid">                        
+                        <button type="button" class="service-list__action-btn" tooltip="Ver {{ moduloSingular }} turístico">
+                            <i class="ri-eye-fill"></i>
+                        </button>                      
+                        <button type="button" class="service-list__action-btn" (click)="eliminarAlert(servicio.id!, servicio.habilitado!, servicio.nombre!)" tooltip="{{ servicio.habilitado! == true ? 'Deshabilitar' : 'Habilitar' }} {{ moduloSingular }} turístico">
+                            <i [ngClass]="{ 'ri-alarm-warning-fill': servicio.habilitado == true, 'ri-thumb-up-fill': servicio.habilitado == false }"></i>
+                        </button>                   
+                    </div>
+                </li>
+            </ul>
+            <app-pagination-buttons 
+                [totalPaginas]="paginado!.totalPaginas!" 
+                [paginaActual]="paginado!.paginaActual!"
+                (recargarModulo)="paginar($event)"></app-pagination-buttons>
+        </div>
+    </section>  
+</main>

@@ -1,0 +1,12 @@
+J:\Documents\Code\Codigo\Core\Utilitarios\bin\Release\net5.0\Utilitarios.deps.json
+J:\Documents\Code\Codigo\Core\Utilitarios\bin\Release\net5.0\Utilitarios.dll
+J:\Documents\Code\Codigo\Core\Utilitarios\bin\Release\net5.0\ref\Utilitarios.dll
+J:\Documents\Code\Codigo\Core\Utilitarios\bin\Release\net5.0\Utilitarios.pdb
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.csproj.AssemblyReference.cache
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.GeneratedMSBuildEditorConfig.editorconfig
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.AssemblyInfoInputs.cache
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.AssemblyInfo.cs
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.csproj.CoreCompileInputs.cache
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.dll
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\ref\Utilitarios.dll
+J:\Documents\Code\Codigo\Core\Utilitarios\obj\Release\net5.0\Utilitarios.pdb

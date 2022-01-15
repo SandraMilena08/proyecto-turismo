@@ -1,0 +1,91 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main">
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner__container container grid">
+            <div class="banner__data">
+                <h2 class="section__title banner__title">Explora la <br> región <b>del Gualivá</b></h2>
+                <p class="section__description banner__description">Puedes encontrar los mejores planes y servicios ofrecidos por los proveedores de la región del Gualivá, explora las ofertas turísticas ahora.</p>
+                <div class="banner__explore-towns">
+                    <a class="button" (click)="redirigir('/servicios/0/10')">Explorar</a>
+                    <a class="button button--border" (click)="scroll()">Municipios</a>
+                </div>                
+            </div>
+            <div class="banner__img">
+                <div class="banner__img-overlay">
+                    <img class="banner__img-src" src="../../../assets//img/banner.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categorias -->
+    <section class="categories section">
+        <div class="categories__container container grid">
+            <div class="categories__data">
+                <h2 class="section__title categories title">¿Qué tipo de planes y <br> servicios turísticos encontrarás?</h2>      
+            </div>
+            <ul class="categories__collage">
+                <li class="categories__item categories__info">
+                    <h3 class="categories__subtitle">Categorías</h3>                    
+                </li>
+                <li class="categories__item">
+                    <img src="../../../assets/img/categorie-1.png" alt="">
+                </li>
+                <li class="categories__item">
+                    <img src="../../../assets/img/categorie-2.png" alt="">
+                </li>
+                <li class="categories__item">
+                    <img src="../../../assets/img/categorie-3.png" alt="">
+                </li>
+                <li class="categories__item">
+                    <img src="../../../assets/img/categorie-4.png" alt="">
+                </li>
+                <li class="categories__item">
+                    <img src="../../../assets/img/categorie-5.png" alt="">
+                </li>                
+            </ul>
+        </div>
+    </section>
+    <!-- Municipios -->
+    <section id="towns-data" class="towns section" #municipios>
+        <div class="towns__container container grid">
+            <div class="towns__data">
+                <h2 class="section__title towns__title">Municipios</h2>
+                <p class="section__description towns__description">La provincia del Gualivá está <br> conformada por doce municipios:</p>
+                <!-- Slider municipios -->
+                <ul id="towns-slider" class="towns__slider">
+                    <li class="towns-slider__slide" *ngFor="let municipio of listaMunicipios; index as i">
+                        <div class="slide__top-cntr" (click)="mostrarMunicipio(i)">
+                            <h3 class="slide__top-town-name">{{ municipio.nombre }}</h3>
+                            <i class="slide__top-town-plus-icon" [ngClass]="{ 'ri-add-fill': municipio.activo == false, 'ri-subtract-fill': municipio.activo == true }"></i>
+                        </div>
+                        <div class="slide__bottom-cntr grid" [ngClass]="{ 'slide__bottom-cntr--active': municipio.activo == false }">
+                            <p class="slide__bottom-cntr-town-description">{{ municipio.descripcion }}</p>
+                            <swiper 
+                                [effect]="'coverflow'"
+                                [grabCursor]="true"
+                                [centeredSlides]="true"
+                                [slidesPerView]="'auto'"
+                                [coverflowEffect]="{
+                                    rotate: 50,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 1,
+                                    slideShadows: true
+                                }"
+                                [pagination]="true"
+                                class="mySwiper"
+                            >
+                                <ng-template swiperSlide *ngFor="let imagen of municipio.imagenes">
+                                    <img src="../../../assets/towns/{{ imagen }}">
+                                </ng-template>                                
+                            </swiper>
+                        </div>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </section>
+</main>

@@ -1,0 +1,187 @@
+/* Oferta turística */
+.services {
+    margin-bottom: var(--mb-2);
+}
+
+.services__title {
+    text-align: left !important;
+}
+
+.services__search-add {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services__search {
+    width: calc(100% - 9rem);    
+}
+
+.services__search-label {
+    display: flex;
+    width: 100%;
+    height: 100%;    
+    background: var(--input-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;    
+    cursor: text;
+}
+
+.services__search-input-icon {
+    display: flex;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;    
+}
+
+.services__search-input {
+    width: calc(100% - 3rem);
+    padding: var(--mb-1);    
+    padding-left: 0;
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+    background: var(--input-color);
+}
+
+.services__search-input::placeholder {
+    color: var(--text-color);
+}
+
+.services__add-btn {
+    width: 8rem;
+    text-align: center;
+}
+
+/* Servicios */
+.service-list__item {
+    position: relative;
+}
+
+.service-list__item-info {
+    margin-top: var(--mb-1);
+}
+
+.service-list__ul {
+    grid-template-columns: 1fr;        
+}
+
+.service-list__item-info {
+    display: flex;
+    height: 16.5rem;
+    flex-flow: column;
+    justify-content: space-between;    
+}
+
+.service-list__item-info-information {
+    display: flex;    
+    height: 12rem !important;    
+    margin: var(--mb-1) 0;
+    overflow: hidden;
+}
+
+.service-list__item-info-rating-price-town {
+    grid-template-columns: repeat(2, 1fr);   
+    gap: .5rem !important; 
+}
+
+.service-list__item-info-rating-price-town > div {
+    display: flex;
+}
+
+.service-list__item-info-rating-price-town div i {
+    display: flex;
+    margin-right: .5rem;
+    color: var(--first-color);
+    align-items: center;
+}
+
+.service-list__item-info-qnt-price {    
+    width: fit-content;
+    grid-column-start: 1;
+    grid-column-end: 3;    
+    padding: .25rem .6rem;
+    background: var(--first-color);
+    border-radius: 4px;
+}
+
+.service-list__item-info-qnt-price * {
+    font-size: var(--very-small-font-size);
+    color: var(--white-color) !important;
+}
+
+.service-list__action-btns, .service-list__action-btns-custom, .service-list__action-btns-custom-two {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem !important;    
+    z-index: var(--z-tooltip);
+}
+
+.service-list__action-btns-custom {
+    grid-template-columns: 1fr 1fr;
+}
+
+.service-list__action-btns-custom-two {
+    grid-template-columns: 1fr;
+}
+
+.service-list__action-btn {
+    display: flex;
+    width: 1.8rem;
+    height: 1.8rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    
+}
+
+.service__not-visible-icon {
+    display: flex;
+    width: 1.8rem;
+    height: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--h3-font-size);
+    color: var(--dark-warning-color);
+    background: var(--warning-color);
+    border-radius: 4px;
+}
+
+.service-images {
+    display: block;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;    
+}
+
+.mySwiper {
+    height: 100%;
+    max-height: 100%;
+}
+
+.service-images img {
+    display: flex;    
+    width: 100%;
+    height: 100%;    
+    object-fit: cover;
+}
+
+/* Dispositivos medianos */
+@media screen and (min-width: 490px) and (max-width: 767px) {
+
+    .service-list__ul {
+        grid-template-columns: repeat(2, 1fr);        
+    }
+    
+}
+
+@media screen and (min-width: 767px) {
+
+    .service-list__ul {
+        grid-template-columns: repeat(3, 1fr);        
+    }
+
+}

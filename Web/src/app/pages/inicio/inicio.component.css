@@ -1,0 +1,134 @@
+/* Banner */
+.banner__container {     
+    height: calc(100vh - var(--header-height));
+    align-content: center;
+    row-gap: 3rem;    
+}
+
+.banner__title, .banner__description {
+    text-align: left;
+}
+
+.banner__title {
+    margin-bottom: var(--mb-2-5);
+    font-size: var(--large-font-size);
+    font-weight: var(--font-medium);    
+}
+
+.banner__explore-towns {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+.banner__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.banner__img-overlay {
+    overflow: hidden;
+}
+
+.banner__img-src {
+    width: 320px;
+}
+
+/* Categorías */
+.categories__collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+}
+
+.categories__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories__item:nth-child(2),
+.categories__item:nth-child(3),
+.categories__item:nth-child(6) {
+    background-color: var(--first-color-alt);
+}
+
+/* Municipios */
+.towns__description {
+    text-align: center;
+}
+
+.slide__top-cntr {
+    display: flex;
+    padding: var(--mb-1) 0;
+    align-items: center;
+    justify-content: space-between; 
+    border-bottom: 1px solid var(--border-color); 
+    cursor: pointer;  
+}
+
+.slide__top-town-plus-icon {
+    font-size: var(--normal-font-size);    
+    color: var(--title-color);
+}
+
+.slide__top-cntr:hover > * {
+    color: var(--first-color);
+}
+
+.slide__bottom-cntr {
+    padding: var(--mb-1);    
+    background-color: var(--first-color-alt);   
+    overflow: hidden;     
+}
+
+.slide__bottom-cntr--active {
+    height: 0;
+    padding: 0;    
+}
+
+@media screen and (min-height: 721px) {
+        
+    .banner__container {
+        height: 640px;        
+    }
+
+    .banner__img-src {
+        width: 280px;        
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .banner__container {
+        grid-template-columns: 1.1fr .9fr;
+    }    
+
+    .banner__img-src {
+        width: 380px;
+    }
+
+    .categories__collage {        
+        grid-template-columns: 1fr 1fr 1fr;    
+    }
+
+    .categories__item:nth-child(odd) {
+        background-color: var(--body-color);
+    }
+
+    .categories__item:nth-child(even) {
+        background-color: var(--first-color-alt);
+    }
+
+    .slide__bottom-cntr {
+        grid-template-columns: 1fr 1fr;        
+    }
+
+    .slide__bottom-cntr-town-description {
+        display: flex;
+        align-items: center;
+    }
+
+}

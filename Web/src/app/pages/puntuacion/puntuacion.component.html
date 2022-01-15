@@ -1,0 +1,64 @@
+<!-- Header -->
+<app-header [rol]="'anonimo'"></app-header>
+
+<main class="main" *ngIf="modulo && nombreOT">
+    <section class="services">
+        <div class="services__container container grid">
+            <div class="services__data">
+                <h2 class="section__title section__large-title services__title">Puntuación de <br><b>{{ modulo }} turístico</b></h2>
+                <p class="section__description form__description">Califica tu experiencia en el {{ modulo }} turístico: <b>{{ nombreOT }}.</b></p>
+            </div>
+        </div>
+    </section>
+    <section class="poll container grid">        
+        <h2>Encuesta</h2>
+        <ul class="poll__items grid">            
+            <li class="poll__item" *ngFor="let pregunta of listaPreguntas; index as i">
+                <p class="poll__question"><b>{{i+1}}. </b>{{ pregunta }}</p>
+                <div class="poll__stars">
+                    <button type="button" class="poll__stars-btn poll__star-{{i}}1"
+                        (mouseenter)="mouseHoverEvent(i, 1)"
+                        (mouseleave)="mouseLeaveEvent(i)"
+                        (click)="seleccionarPuntuacion(i, 1)">
+                        <i class="ri-star-fill"></i>
+                    </button>
+                    <button type="button" class="poll__stars-btn poll__star-{{i}}2"
+                        (mouseenter)="mouseHoverEvent(i, 2)"
+                        (mouseleave)="mouseLeaveEvent(i)"
+                        (click)="seleccionarPuntuacion(i, 2)">
+                        <i class="ri-star-fill"></i>
+                    </button>
+                    <button type="button" class="poll__stars-btn poll__star-{{i}}3"
+                        (mouseenter)="mouseHoverEvent(i, 3)"
+                        (mouseleave)="mouseLeaveEvent(i)"
+                        (click)="seleccionarPuntuacion(i, 3)">
+                        <i class="ri-star-fill"></i>
+                    </button>
+                    <button type="button" class="poll__stars-btn poll__star-{{i}}4"
+                        (mouseenter)="mouseHoverEvent(i, 4)"
+                        (mouseleave)="mouseLeaveEvent(i)"
+                        (click)="seleccionarPuntuacion(i, 4)">
+                        <i class="ri-star-fill"></i>
+                    </button>
+                    <button type="button" class="poll__stars-btn poll__star-{{i}}5"
+                        (mouseenter)="mouseHoverEvent(i, 5)"
+                        (mouseleave)="mouseLeaveEvent(i)"
+                        (click)="seleccionarPuntuacion(i, 5)">
+                        <i class="ri-star-fill"></i>
+                    </button>
+                    <i class="poll__emotion"
+                        [ngClass]="{ 
+                            'ri-emotion-sad-line': listaPuntuaciones[i] == 1,
+                            'ri-emotion-unhappy-line': listaPuntuaciones[i] == 2,
+                            'ri-emotion-normal-line': listaPuntuaciones[i] == 3,
+                            'ri-emotion-happy-line': listaPuntuaciones[i] == 4,
+                            'ri-emotion-laugh-line': listaPuntuaciones[i] == 5                            
+                        }"></i>
+                </div>                
+            </li>
+        </ul>    
+        <div class="poll__submit-btn-cntr">
+            <button type="button" class="button poll__submit-btn" (click)="puntuarOfertaTuristica()">Continuar</button>        
+        </div>
+    </section>
+</main>

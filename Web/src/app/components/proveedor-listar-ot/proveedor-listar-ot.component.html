@@ -1,0 +1,58 @@
+<main class="main">
+    <section class="services">
+        <div class="services__container container grid">
+            <div class="services__data">
+                <h2 class="section__title section__large-title services__title">{{ modulo }} <br><b>Registrados</b></h2>                
+                <app-proveedor-habilitado></app-proveedor-habilitado>
+                <p class="section__description form__description">{{ modulo }} registrados en la plataforma:</p>
+            </div>
+            <div class="services__search-add">
+                <form [formGroup]="formGroup" (ngSubmit)="buscarOT()"  class="services__search">
+                    <label class="services__search-label"> <!-- Search -->
+                        <i class="ri-search-line services__search-input-icon"></i>
+                        <input type="search" class="services__search-input" placeholder="Buscar .." autocomplete="off" formControlName="nombre">
+                    </label>
+                </form>
+                <div class="services__add"> <!-- Agregar servicio -->
+                    <a class="button services__add-btn" (click)="navegar()">Crear</a>
+                </div>
+            </div>           
+        </div>
+    </section>
+    <section class="service-list" *ngIf="listaOT == null || listaOT!.length == 0">
+        <div class="service-list__container container grid">
+            <app-no-content [titulo]="modulo!.concat(' turísticos')"></app-no-content>
+        </div>
+    </section>    
+    <section class="service-list grid" *ngIf="listaOT">
+        <div class="service-list__container container grid">
+            <ul class="service-list__ul grid">
+                <li class="service-list__item" *ngFor="let servicio of listaOT">                                     
+                    <app-oferta-turistica [servicio]="servicio"></app-oferta-turistica>                                      
+                    <div class="service-list__action-btns grid"> 
+                        <button type="button"
+                            *ngIf="servicio.habilitado == false"
+                            class="service-list__action-btn"
+                            tooltip="Este {{ moduloSingular }} turístico ha sido deshabilitado. Ya no es visible para los turistas.">
+                            <i class="ri-error-warning-fill service__not-visible-icon"></i>
+                        </button>                       
+                        <button type="button" 
+                            *ngIf="servicio.habilitado == true"
+                            (click)="navegarCodigoPuntuacion(servicio.id!)" class="service-list__action-btn" tooltip="Generar código de puntuación de {{ moduloSingular }} turístico">
+                            <i class="ri-star-fill"></i>
+                        </button>
+                        <button type="button" class="service-list__action-btn" tooltip="Ver {{ moduloSingular }} turístico">
+                            <i class="ri-eye-fill"></i>
+                        </button>
+                        <button type="button" (click)="navegarEditar(servicio.id!)" class="service-list__action-btn" tooltip="Editar {{ moduloSingular }} turístico">
+                            <i class="ri-pencil-fill"></i>
+                        </button>
+                        <button type="button" (click)="eliminarAlert(servicio.id!, servicio.nombre!)" class="service-list__action-btn" tooltip="Eliminar {{ moduloSingular }} turístico">
+                            <i class="ri-delete-bin-7-fill"></i>
+                        </button>                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>    
+</main>
